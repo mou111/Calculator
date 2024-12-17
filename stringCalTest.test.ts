@@ -11,7 +11,7 @@ describe('String Calculator', () => {
   });
 
   test('Returns the sum for a comma-separated string', () => {
-    expect(CalculateSum("1,2,3")).toBe(6);
+    expect(CalculateSum("1,4,3")).toBe(8);
   });
 
   test('Returns the sum for a newline-separated string', () => {
