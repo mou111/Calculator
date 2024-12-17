@@ -1,9 +1,8 @@
-//const {  CalculateSum, NegNumException } = require('./stringCal');
 import {describe, expect, test} from '@jest/globals';
 import {CalculateSum, NegNumException} from './index';
 
 describe('String Calculator', () => {
-  test('returns 0 for an empty string', () => {
+  test('Returns 0 for an empty string', () => {
     expect(CalculateSum("")).toBe(0);
   });
 
