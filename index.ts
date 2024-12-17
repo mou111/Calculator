@@ -15,7 +15,7 @@ function CalculateSum(inData: string): number {
   if (!inData) return 0;
   console.log("Input Data: ", inData);
 
-  // Default delimiters (comma / newline)
+  // Default delimiters ( Allowed demiliters : comma / newline)
   let delimiter: RegExp = /,|\n/;
   if (inData.startsWith("//")) {
     const delimiterMatch = inData.match(/^\/\/(.*?)\n/);
@@ -27,13 +27,14 @@ function CalculateSum(inData: string): number {
 
   let numList: string[] = inData.split(delimiter);  // Split the numbers by delimiter
 
-  // Convert numbers to integers and check for negatives
+  // Convert numbers to integers and check for negative
   let negNumbers: number[] = [];
   let sum: number = 0;
 
   numList.forEach((num) => {
     let data: number = parseInt(num, 10);
-    if (isNaN(data)) return; // Skip empty strings or invalid numbers
+    if (isNaN(data)) return; 
+    // Skip empty strings or invalid numbers
 
     if (data < 0) {
       negNumbers.push(data);
@@ -53,7 +54,7 @@ function CalculateSum(inData: string): number {
   return sum;
 }
 
-// Helper function to escape the delimiter regex (in case the delimiter contains special characters like ".", "*", etc.)
+// Helper function to escape the delimiter regex (If the delimiter contains special characters like ".", "*", etc.)
 function escapeRegExp(str: string): string {
   return str.replace(/[.*+?^=!:${}()|\[\]\/\\]/g, '\\$&');
 }
